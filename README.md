@@ -19,9 +19,9 @@ In this model, I concatenated the 'qtype' and 'question' together. When attempti
 a) Text Cleaning 
 During the text cleaning process, special characters were removed from the dataset. 
 
-Total number of special Characters Removed: 681112 
-
-Unique Characters: 56 
+**Total number of special Characters Removed: 681112**
+ 
+**Unique Characters: 56**
 
 b) Handling Missing Values and Duplicates 
 
@@ -42,9 +42,9 @@ Here is a diagram illustrating the number of words in each row of both questions
  ![image](https://github.com/Deepakkori45/QuestionAnsweringUsingMistral/assets/111627339/21192a26-b14b-4dcd-ae51-0b264113e1a5)
 
 
-Mean words per row in 'Question' column: 7.17 
+**Mean words per row in 'Question' column: 7.17** 
 
-Mean words per row in 'Answer' column: 194.88 
+**Mean words per row in 'Answer' column: 194.88** 
 
 b) Word Clouds for Frequent Words 
 
@@ -70,9 +70,9 @@ Both models are loaded with 4-bit quantization. Quantization, in this context, r
 
 
 
-For 32bit size = (7 * 4) / (32/32) *1.2 = 33GB 
+**For 32bit size = (7 * 4) / (32/32) * 1.2 = 33GB** 
 
-For 4bit size = (7*4) / (32/4) * 1.2 = 3.9GB 
+**For 4bit size = (7*4) / (32/4) * 1.2 = 3.9GB**
 
 Loading the Mistral 7b model in 32-bit format requires approximately 33.6 GB of memory. While Colab might initially load the model onto its disk(108GB), attempting to transfer it to a GPU for execution it’ll likely result in an out-of-memory error (15 GB). 
 
@@ -89,11 +89,11 @@ In PEFT, we can reduce matrix size by removing linearly dependent columns withou
 
  
 
-During fine-tuning, Mistral-7B has trainable parameters total 27,262,976(2.7 million). 
+**During fine-tuning, Mistral-7B has trainable parameters total 27,262,976(2.7 million).** 
 
-The total number of parameters in the model, including non-trainable ones, is 3,779,334,144 (3.7billion). 
+**The total number of parameters in the model, including non-trainable ones, is 3,779,334,144 (3.7billion).** 
 
-The percentage of trainable parameters in Mistral-7B is approximately 0.72%. 
+**The percentage of trainable parameters in Mistral-7B is approximately 0.72%.** 
 
  
 
@@ -122,17 +122,17 @@ For an additional perspective, the Gemini model was utilized to compare the outp
 
 Average Scores: 
 
-Baseline Model: Average Score - 36.04 
+**Baseline Model: Average Score - 36.04** 
 
-Finetuned Model: Average Score - 76.67 
+**Finetuned Model: Average Score - 76.67** 
 
 b) BLEU Score Comparison 
 
 During the evaluation phase, the performance of the Question Answering system was assessed using the BLEU (Bilingual Evaluation Understudy) metric. BLEU is a commonly used metric for evaluating the quality of machine-generated text by comparing it to one or more reference translations. 
 
-Baseline BLEU Score: 0.2228 
+**Baseline BLEU Score: 0.2228** 
 
-Fine-tuned BLEU Score: 0.3647 
+**Fine-tuned BLEU Score: 0.3647** 
 
 After fine-tuning on the domain-specific dataset, the BLEU score significantly improved, indicating enhanced performance in generating relevant answers. These BLEU scores serve as quantitative measures to gauge the effectiveness of the Question Answering system, with a higher BLEU score indicating better alignment with the reference answers. 
 
@@ -147,13 +147,14 @@ Consistently Lower Validation Loss: The validation loss consistently remained lo
 
 Gradual Convergence: Losses gradually decreased and approached a plateau towards the end of the training epoch, implying that further training might yield only marginal improvements. 
 
-For Llama-7B model traning: 
+For Llama-7B model traning:
+
 ![image](https://github.com/Deepakkori45/QuestionAnsweringUsingMistral/assets/111627339/4ab8bb76-b226-4ab6-b458-ac5878966ba2)
 
  
-7) Conclusion 
+# 7) Conclusion 
 
-Challenges Overcome  
+Challenges Overcome: 
 
 • Question Specificity: Improved through fine-tuning for concise and contextually relevant responses. 
 
