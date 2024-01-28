@@ -1,4 +1,4 @@
-# Question Answering System 
+![image](https://github.com/Deepakkori45/QuestionAnsweringUsingMistral/assets/111627339/cb9dca2e-5569-41fd-ba50-0711ae2d77df)# Question Answering System 
 
 # 1) Dataset Understanding 
 
@@ -7,7 +7,11 @@ The dataset used in this assignment is the "MedQuad-MedicalQnADataset." The stru
 a) Qtype Dropped Reasons 
 
 When I plotted the distribution of 'qtype' versus the number of questions, it revealed that categories such as 'information,' 'symptoms,' and 'treatments' collectively accounted for more than 50% of the dataset. These categories did not significantly contribute to distinguishing between questions, making the 'qtype' column less relevant. Consequently, I made the decision to drop the 'qtype' column. 
+![image](https://github.com/Deepakkori45/QuestionAnsweringUsingMistral/assets/111627339/9c18fd46-805f-48c6-be47-3f06a028dc91)
+
 I have fine-tuned a model named "mistral_with_qtype" and uploaded it to Hugging Face. Here is the model id: 
+![image](https://github.com/Deepakkori45/QuestionAnsweringUsingMistral/assets/111627339/21ca54ee-8902-4a20-8a0c-f8e368b6e28a)
+
 In this model, I concatenated the 'qtype' and 'question' together. When attempting to predict the test results, I observed that answers without considering the 'qtype' yielded better results compared to those considering the 'qtype.' Consequently, I decided to drop the 'qtype' column from the model. I have attached the results at the end. 
 
 # 2) Data Preprocessing 
@@ -35,7 +39,8 @@ a) Number of Words in Each Row
 
 Here is a diagram illustrating the number of words in each row of both questions and answers. 
 
- 
+ ![image](https://github.com/Deepakkori45/QuestionAnsweringUsingMistral/assets/111627339/21192a26-b14b-4dcd-ae51-0b264113e1a5)
+
 
 Mean words per row in 'Question' column: 7.17 
 
@@ -45,9 +50,7 @@ b) Word Clouds for Frequent Words
 
 The generated word clouds visually represent the most frequent words in the 'Patient Questions' and 'Expert Responses' columns. 
 
- 
-
- 
+ ![image](https://github.com/Deepakkori45/QuestionAnsweringUsingMistral/assets/111627339/d2e1e340-4ca7-4268-8e13-e963ef27cc0b)
 
 # 4) Train/Fine-tune on Domain-specific Dataset 
 
@@ -63,7 +66,8 @@ b) Quantization
 
 Both models are loaded with 4-bit quantization. Quantization, in this context, refers to reducing the precision of the model's weights to 4 bits. 
 
- 
+ ![image](https://github.com/Deepakkori45/QuestionAnsweringUsingMistral/assets/111627339/51bd7d8c-e39a-4f14-ae83-88fae1e709b7)
+
 
 For 32bit size = (7 * 4) / (32/32) *1.2 = 33GB 
 
@@ -78,10 +82,9 @@ However, applying 4-bit quantization significantly reduces the model size to aro
 c) PEFT Details 
 
 In PEFT, we can reduce matrix size by removing linearly dependent columns without compromising information. This is possible because the information contained within those columns can be recovered through linear decomposition. Applying linear decomposition directly to the weight update matrix (Delta W) automatically eliminates linearly dependent columns. 
+![image](https://github.com/Deepakkori45/QuestionAnsweringUsingMistral/assets/111627339/f1641cce-9ef0-4241-80d1-13eb084eed5b)
 
- 
-
- 
+ ![image](https://github.com/Deepakkori45/QuestionAnsweringUsingMistral/assets/111627339/0b5e07ed-8b80-4378-b6e3-bb12a6727bf0)
 
  
 
@@ -99,7 +102,8 @@ A rank of 64 means the low-rank weight updates are 64 times smaller than the ori
 
  
 
- 
+ ![image](https://github.com/Deepakkori45/QuestionAnsweringUsingMistral/assets/111627339/b5c92b41-2539-46ba-8d4e-c181479b8f1e)
+
 
  
 
@@ -142,8 +146,9 @@ Consistently Lower Validation Loss: The validation loss consistently remained lo
 
 Gradual Convergence: Losses gradually decreased and approached a plateau towards the end of the training epoch, implying that further training might yield only marginal improvements. 
 
-
 For Llama-7B model traning: 
+![image](https://github.com/Deepakkori45/QuestionAnsweringUsingMistral/assets/111627339/4ab8bb76-b226-4ab6-b458-ac5878966ba2)
+
  
 7) Conclusion 
 
