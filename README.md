@@ -1,4 +1,4 @@
-![image](https://github.com/Deepakkori45/QuestionAnsweringUsingMistral/assets/111627339/cb9dca2e-5569-41fd-ba50-0711ae2d77df)# Question Answering System 
+# Question Answering System 
 
 # 1) Dataset Understanding 
 
