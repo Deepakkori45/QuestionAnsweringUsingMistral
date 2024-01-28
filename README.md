@@ -66,7 +66,8 @@ b) Quantization
 
 Both models are loaded with 4-bit quantization. Quantization, in this context, refers to reducing the precision of the model's weights to 4 bits. 
 
- ![image](https://github.com/Deepakkori45/QuestionAnsweringUsingMistral/assets/111627339/51bd7d8c-e39a-4f14-ae83-88fae1e709b7)
+![image](https://github.com/Deepakkori45/QuestionAnsweringUsingMistral/assets/111627339/6e58e031-2f5c-4b57-8659-6cc90cf28779)
+
 
 
 For 32bit size = (7 * 4) / (32/32) *1.2 = 33GB 
