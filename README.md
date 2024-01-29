@@ -7,15 +7,18 @@ The dataset used in this assignment is the "MedQuad-MedicalQnADataset." The stru
 a) Qtype Dropped Reasons 
 
 When I plotted the distribution of 'qtype' versus the number of questions, it revealed that categories such as 'information,' 'symptoms,' and 'treatments' collectively accounted for more than 50% of the dataset. These categories did not significantly contribute to distinguishing between questions, making the 'qtype' column less relevant. Consequently, I made the decision to drop the 'qtype' column. 
-![image](https://github.com/Deepakkori45/QuestionAnsweringUsingMistral/assets/111627339/9c18fd46-805f-48c6-be47-3f06a028dc91)
+<img src="https://github.com/Deepakkori45/QuestionAnsweringUsingMistral/assets/111627339/9c18fd46-805f-48c6-be47-3f06a028dc91" alt="image" width="600" height="300" />
 
 I have fine-tuned a model named "mistral_with_qtype" and uploaded it to Hugging Face. 
 Here is the my Huggigface account: https://huggingface.co/Deepakkori45
 
 Model id: 
 
-![image](https://github.com/Deepakkori45/QuestionAnsweringUsingMistral/assets/111627339/21ca54ee-8902-4a20-8a0c-f8e368b6e28a)
 
+![image](https://github.com/Deepakkori45/QuestionAnsweringUsingMistral/assets/111627339/96dbfaea-d3ae-407b-9102-6ac9b3758194)
+
+
+a) 
 In this model, I concatenated the 'qtype' and 'question' together. When attempting to predict the test results, I observed that answers without considering the 'qtype' yielded better results compared to those considering the 'qtype.' Consequently, I decided to drop the 'qtype' column from the model. I have attached the results at the end. 
 
 # 2) Data Preprocessing 
