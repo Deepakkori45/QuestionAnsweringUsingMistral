@@ -46,8 +46,7 @@ a) Number of Words in Each Row
 
 Here is a diagram illustrating the number of words in each row of both questions and answers. 
 
- ![image](https://github.com/Deepakkori45/QuestionAnsweringUsingMistral/assets/111627339/21192a26-b14b-4dcd-ae51-0b264113e1a5)
-
+<img src="https://github.com/Deepakkori45/QuestionAnsweringUsingMistral/assets/111627339/21192a26-b14b-4dcd-ae51-0b264113e1a5" alt="image" width="600" height="300" />
 
 **Mean words per row in 'Question' column: 7.17** 
 
@@ -56,8 +55,7 @@ Here is a diagram illustrating the number of words in each row of both questions
 b) Word Clouds for Frequent Words 
 
 The generated word clouds visually represent the most frequent words in the 'Patient Questions' and 'Expert Responses' columns. 
-
- ![image](https://github.com/Deepakkori45/QuestionAnsweringUsingMistral/assets/111627339/d2e1e340-4ca7-4268-8e13-e963ef27cc0b)
+<img src="https://github.com/Deepakkori45/QuestionAnsweringUsingMistral/assets/111627339/d2e1e340-4ca7-4268-8e13-e963ef27cc0b" alt="image" width="600" height="300" />
 
 # 4) Train/Fine-tune on Domain-specific Dataset 
 
@@ -72,10 +70,7 @@ The code demonstrates the fine-tuning process for two language models, Mistral-7
 b) Quantization 
 
 Both models are loaded with 4-bit quantization. Quantization, in this context, refers to reducing the precision of the model's weights to 4 bits. 
-
-![image](https://github.com/Deepakkori45/QuestionAnsweringUsingMistral/assets/111627339/6e58e031-2f5c-4b57-8659-6cc90cf28779)
-
-
+<img src="https://github.com/Deepakkori45/QuestionAnsweringUsingMistral/assets/111627339/6e58e031-2f5c-4b57-8659-6cc90cf28779" alt="image" width="300" height="150" />
 
 **For 32bit size = (7 * 4) / (32/32) * 1.2 = 33GB** 
 
@@ -90,10 +85,7 @@ However, applying 4-bit quantization significantly reduces the model size to aro
 c) PEFT Details 
 
 In PEFT, we can reduce matrix size by removing linearly dependent columns without compromising information. This is possible because the information contained within those columns can be recovered through linear decomposition. Applying linear decomposition directly to the weight update matrix (Delta W) automatically eliminates linearly dependent columns. 
-![image](https://github.com/Deepakkori45/QuestionAnsweringUsingMistral/assets/111627339/f1641cce-9ef0-4241-80d1-13eb084eed5b)
-
- ![image](https://github.com/Deepakkori45/QuestionAnsweringUsingMistral/assets/111627339/0b5e07ed-8b80-4378-b6e3-bb12a6727bf0)
-
+<img src="https://github.com/Deepakkori45/QuestionAnsweringUsingMistral/assets/111627339/f1641cce-9ef0-4241-80d1-13eb084eed5b" alt="image" width="600" height="300" />
  
 
 **During fine-tuning, Mistral-7B has trainable parameters total 27,262,976(2.7 million).** 
@@ -103,15 +95,10 @@ In PEFT, we can reduce matrix size by removing linearly dependent columns withou
 **The percentage of trainable parameters in Mistral-7B is approximately 0.72%.** 
 
  
-
- 
-
 A rank of 64 means the low-rank weight updates are 64 times smaller than the original weight matrices, considerably reducing memory requirements. 
 
  
-
- ![image](https://github.com/Deepakkori45/QuestionAnsweringUsingMistral/assets/111627339/b5c92b41-2539-46ba-8d4e-c181479b8f1e)
-
+<img src="https://github.com/Deepakkori45/QuestionAnsweringUsingMistral/assets/111627339/b5c92b41-2539-46ba-8d4e-c181479b8f1e" alt="image" width="400" height="200" />
 
  
 
@@ -146,17 +133,17 @@ After fine-tuning on the domain-specific dataset, the BLEU score significantly i
  
 # 6) Results 
 
-Training and Validation Loss Dynamics 
+Model Response:
 
-Initial Rapid Decrease: Both training and validation losses started high but rapidly decreased during the initial training steps, indicating effective model learning. 
+1)
 
-Consistently Lower Validation Loss: The validation loss consistently remained lower than the training loss, suggesting strong generalization to unseen data and mitigating overfitting. 
+![image](https://github.com/Deepakkori45/QuestionAnsweringUsingMistral/assets/111627339/6da86e24-98b1-4571-b264-d762c5003556)
 
-Gradual Convergence: Losses gradually decreased and approached a plateau towards the end of the training epoch, implying that further training might yield only marginal improvements. 
+2)
+ ![image](https://github.com/Deepakkori45/QuestionAnsweringUsingMistral/assets/111627339/6b6608ac-ff1a-4470-810a-8bad92b87939)
 
-For Llama-7B model traning:
-
-![image](https://github.com/Deepakkori45/QuestionAnsweringUsingMistral/assets/111627339/4ab8bb76-b226-4ab6-b458-ac5878966ba2)
+3)
+![image](https://github.com/Deepakkori45/QuestionAnsweringUsingMistral/assets/111627339/9d0c41a7-34ce-42a1-96d4-91b58b53010a)
 
  
 # 7) Conclusion 
