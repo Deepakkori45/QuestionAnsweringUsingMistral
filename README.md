@@ -1,4 +1,4 @@
-App link: https://cricket-score-prediction-x27nemdpwkvyzn9rynmse4.streamlit.app/
+App link: https://questionansweringusingmistral-dldeqrvq3eeklslhwxqmze.streamlit.app/
 
 # Question Answering System 
 
