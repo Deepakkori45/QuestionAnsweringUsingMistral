@@ -1,4 +1,4 @@
-App link: https://questionansweringusingmistral-dldeqrvq3eeklslhwxqmze.streamlit.app/
+App link: https://questionansweringusingmistral-gwnnkgxbh5mfek3aqjfymf.streamlit.app/
 
 # Question Answering System 
 
